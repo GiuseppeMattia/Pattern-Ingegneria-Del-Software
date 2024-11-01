@@ -93,6 +93,8 @@ int main(){
     asterisco->stampa(v, 5);
     cout<<endl;
     chiocciola->stampa(v, 5);
-
+	
+    delete asterisco;
+    delete chiocciola;
     return 0;
 }
