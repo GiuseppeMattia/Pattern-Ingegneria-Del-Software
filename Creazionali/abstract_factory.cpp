@@ -5,7 +5,7 @@ using namespace std;
 
 /*
     Si vuole creare un' applicazione che permetta di configurare un automobile di diverse
-    marche tramite l'utilizzo della Fabbrica Astratta (Abstract Factory)
+    marche usandp il pattern della Fabbrica Astratta (Abstract Factory)
 */
 
 /*
