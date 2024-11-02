@@ -10,6 +10,7 @@ using namespace std;
 /*
     Prodotto
 */
+
 class Carattere{
     public:
         Carattere(){};
