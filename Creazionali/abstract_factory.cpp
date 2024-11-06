@@ -129,6 +129,8 @@ void configureCar(const CarFactory* carFactory){
 
     cout<<"Modello: "<<model->getModel()<<endl;
     cout<<"Motore: "<<engine->getEngine()<<endl;
+    delete model;
+    delete engine;
 }
 
 
