@@ -120,5 +120,9 @@ int main(){
     atHistogram->display(v, 5);
     starHistogram->display(v , 5);
 
+    delete shellWriter;
+    delete fileWriter;
+    delete atHistogram;
+    delete starHistogram;
     return 0;
 }
