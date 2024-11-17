@@ -103,8 +103,8 @@ int main(){
     ShellWriter* shellWriter = new ShellWriter();
     FileWriter* fileWriter = new FileWriter();
 
-    AtHistogram* atHistogram;
     StarHistogram* starHistogram;
+    AtHistogram* atHistogram;    
 
     // Shell
     atHistogram = new AtHistogram(shellWriter);
