@@ -58,7 +58,7 @@ int main(){
         cout<<"1 / 0 = "<<Calculator::getInstance()->divide(1, 0)<<endl;
     }
     catch(invalid_argument& e){
-        cout<<"Impossibile dividere 1 e 0"<<endl;
+        cout<<"Impossibile dividere per zero 0"<<endl;
     }
 
     return 0;
