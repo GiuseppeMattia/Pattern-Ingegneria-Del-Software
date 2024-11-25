@@ -1,10 +1,4 @@
 #include <iostream>
-#include <string>
-#include <stack>
-#include <vector>
-#include <sstream>
-#include <map>
-#include <functional>
 
 using namespace std;
 
@@ -114,13 +108,14 @@ class Context{
 };
 
 int main(){
+    //((5 + 7) * (12 - 10)) / 8
     Expression* e = new Division(
                         new Multiplication(
                                 new Addition(new Number(5), new Number(7)),
                                 new Subtraction(new Number(12), new Number(10))
                         ), new Number(8));
 
-    cout<<e->interpret()<<endl;
+    cout<<e->interpret()<<endl;     // 3
 
     delete e;
     return 0;
