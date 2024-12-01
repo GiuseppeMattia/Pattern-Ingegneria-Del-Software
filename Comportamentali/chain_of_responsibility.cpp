@@ -123,4 +123,5 @@ int main(){
     delete color1;
     delete bw2;
     delete bw1;
+    return 0;
 }
