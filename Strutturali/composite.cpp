@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <memory>
 
 using namespace std;
 
@@ -20,6 +19,8 @@ public:
     virtual ~Decoration() = default;
 
     virtual void display(int level = 0) const = 0;
+    virtual void addComponent(Decoration* d) = 0;       //  Da scrivere nell'interfaccia, i nodi foglia ovviamente non lo useranno
+    virtual void removeComponent(Decoration* d) = 0;    //  Da scrivere nell'interfaccia, i nodi foglia ovviamente non lo useranno
 };
 
 /*
@@ -32,6 +33,14 @@ private:
 
 public:
     FullBall(const string& s) : color(s) {}
+
+    void addComponent(Decoration* d) override{
+        cout<<"Impossibile aggiungere componenti in un nodo foglia"<<endl;
+    }
+
+    void removeComponent(Decoration* d) override{
+        cout<<"Impossibile rimuovere componenti in un nodo foglia"<<endl;
+    }
 
     void display(int level = 0) const override {
         cout << string(level * 4, ' ') << "- Pallina piena, colore: " << color << endl;
@@ -50,11 +59,11 @@ private:
 public:
     HollowBall(const string& s) : color(s) {}
 
-    void addComponent(Decoration* d) {
+    void addComponent(Decoration* d) override{
         components.push_back(d);
     }
 
-    void removeComponent(Decoration* d) {
+    void removeComponent(Decoration* d) override{
         auto it = find(components.begin(), components.end(), d);
         if (it != components.end()) {
             components.erase(it);
@@ -78,6 +87,11 @@ int main(){
     FullBall* b1 = new FullBall("Verde");
     
     FullBall* b2 = new FullBall("Gialla");
+
+    b1->addComponent(b2);
+    b1->removeComponent(b2);
+
+    cout<<endl;
 
     hollowball->addComponent(hollow1);
     hollowball->addComponent(b1);
